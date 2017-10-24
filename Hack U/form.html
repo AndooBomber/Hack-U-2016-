@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Test</title>
+</head>
+<body>
+    <form action="/cgi-bin/SimpleFormTest.py" method="get">
+        性:
+        <input type="text" name="last">
+        <br>
+        名:
+        <input type="text" name="first">
+        <br>
+        <script>
+        var ws = new WebSocket('ws://localhost:80/form.html')
+        ws.onopen = function(){
+            document.getElementById('btn').onclick = function()
+        document.write("Welcome to Smart!!")
+        </script>
+        <input type="submit" value="送信">
+    </form>
+</body>
+</html>

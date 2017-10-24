@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset=utf-8>
+    <bgsound src="./oto/2F-aki.mp3" loop="infinite">
+  </head>
+  <body>
+  <h1>案内図</h1>
+  <div>
+  <img border="0" src="./gazo/案内図2.png">
+  <img id="gazo" src="" style="position: absolute;top:348px;left:379px;">
+  <img src="./gazo/♀0.png" style="position: absolute;top:217px;left:492px;width:47px;height:auto;">
+  <img src="./gazo/♀0.png" style="position: absolute;top:361px;left:492px;width:47px;height:auto;">
+  <img src="./gazo/♀0.png" style="position: absolute;top:433px;left:492px;width:47px;height:auto;">
+  <img src="./gazo/maru.png" style="position: absolute;top:150px;left:140px;width:103px;height:auto;">
+  <img id="handan" src="./gazo/sankaku.png" style="position: absolute;top:383px;left:140px;width:103px;height:auto;">
+  </div>
+  <audio src="./oto/2F-aki.mp3" controls autoplay>
+  </audio>
+  </body>
+    <script>
+      var ws = new WebSocket("ws://localhost:8080/ws");
+      ws.onopen = function() {
+        ws.send("Hello, world"); 
+      };
+      ws.onmessage = function (evt) {
+      var t = Number(evt.data);
+      if(t==1){
+      document.getElementById("gazo").src="./gazo/♀3.png";
+      document.getElementById("handan").src="./gazo/batu.png";
+      }else if(t==0){
+      document.getElementById("gazo").src="./gazo/案内図2_2.png";
+      document.getElementById("handan").src="./gazo/sankaku.png";
+      };
+      };
+    </script>
+</html>

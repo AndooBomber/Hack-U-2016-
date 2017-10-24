@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset=utf-8>
+    </head>
+    <body>
+        <h1>案内図</h1>
+        <div>
+        	<img border="0" src="C:\Users\admin\Documents\Pictures\はっくゆ\案内図.png" width="600" height="400">
+			<img src="C:\Users\admin\Documents\Pictures\はっくゆ\♀0.png" style="position: absolute;top:298px;left:393px;width:42px;height:auto;">
+		</div>
+
+   <canvas id="canvas" width="600" height="400"></canvas>
+    <script>
+    (function() {
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+
+        var image = new Image();
+        image.src = 'C:\Users\admin\Documents\Pictures\はっくゆ\♀0.png';
+        image.addEventListener('load', function() {
+             context.drawImage(image, 0, 0, 150, 100);
+        }, false);
+    })();
+   
+    //コンストラクタ サーバへ接続要求
+    //var ws = new WebSocket("ws://localhost:8888/echo")
+         //信号きたら画像
+    </script>
+    </body>
+</html>
